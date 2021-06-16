@@ -6,7 +6,7 @@
   "background_color": "#000000",
   "theme_color": "#000000",
   "dir": "ltr",
-  "display": "standalone",
+  "display": "fullscreen",
   "orientation": "landscape-primary",
   "icons": [
     {
