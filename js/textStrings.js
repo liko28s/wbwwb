@@ -19,9 +19,9 @@ var textStrings_ES = {
 
 	// Act 2
 	"crazySquareAttacks": "CUADRADO LOCO ATACA",
-	"justMissed": "te lo perdiste por poco",
-	"somethingInteresting": "(tienes que pillarlos haciendo *algo* interesante...)",
-	"whoIsScreaming": "(tienes que coger a quien les grita)",
+	"justMissed": "Te lo perdiste por poco",
+	"somethingInteresting": "(tiene que hacer algo interesante...)",
+	"whoIsScreaming": "(toma foto de quien les grita)",
 	"circleFearsSquares": "CIRCULOS LE TEMEN A LOS CUADRADOS",
 	"whoScaresThem": "(también hay que coger a *quién* les asusta)",
 	"areTheyScared": "(tienes que atraparlos *siendo* asustados por un cuadrado)", // not used
@@ -96,8 +96,8 @@ var textStrings_ES = {
 	"toBeContinued": "(Continuará!)",
 
 	// (quote0002.png)
-	"WBWWB": "NOS CONVERTIMOS\nEN LO QUE CONTEMPLAMOS.",
-	"WSOTATOTSU": "Moldeamos nuestras herramientas y luego nuestras herramientas nos moldean.",
+	"WBWWB": "We Become What We Behold.",
+	"WSOTATOTSU": "Nos convertimos en lo que vemos\nMoldeamos nuestras herramientas y luego nuestras herramientas nos moldean.",
 
 	// (quote0003.png)
 	"MarshallMcLuhan": "Marshall McLuhan",
