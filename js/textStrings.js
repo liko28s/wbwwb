@@ -96,7 +96,7 @@ var textStrings_ES = {
 	"toBeContinued": "(Continuará!)",
 
 	// (quote0002.png)
-	"WBWWB": "We Become What We Behold.",
+	"WBWWB": "We Become What We\nBehold.",
 	"WSOTATOTSU": "Nos convertimos en lo que contemplamos\nMoldeamos nuestras herramientas y luego nuestras herramientas nos moldean.",
 
 	// (quote0003.png)

@@ -1,6 +1,7 @@
 {
   "short_name": "WBWWB",
   "name": "We Become What We Behold",
+  "start_url": "/index.html",
   "lang": "es",
   "description": "Nos Convertimos en lo que Contemplamos",
   "background_color": "#000000",
