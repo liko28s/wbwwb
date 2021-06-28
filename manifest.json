@@ -1,7 +1,7 @@
 {
   "short_name": "WBWWB",
   "name": "We Become What We Behold",
-  "scope": "/wbwwb/",
+  "scope": "https://liko28s.github.io/wbwwb",
   "start_url": "/index.html",
   "lang": "es",
   "description": "Nos Convertimos en lo que Contemplamos",
