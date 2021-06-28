@@ -8,7 +8,7 @@ var textStrings_ES = {
 	// Act 1
 	"niceHat": "Oh! Lindo Sombrero",
 	"outtaHere": "Sí, vete de aquí",
-	"getARoom": "Asqueroso, Busquen Un Hotel",
+	"getARoom": "No les da pena?",
 	"notCoolAnymore": "los sombreros ya no son cool",
 	"tvOnTv": "UN TV... ¡EN LA TV!",
 	"cricky": "Un grillito <3",
@@ -63,6 +63,10 @@ var textStrings_ES = {
 
 	// (chyron3.png)
 	"chyronNothing": "NO ES *NADA*",
+
+	// (credits0000.png)
+	"translatedBy": "Traducido por",
+	"RamiLiko28s": "Rami\n(liko28s)",
 
 	// (credits0001.png)
 	"createdBy": "Creado por",

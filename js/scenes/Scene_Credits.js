@@ -1,5 +1,6 @@
 Game.addToManifest({
 
+	credits0000: "sprites/credits/credits0000.png", // Rami
 	credits0001: "sprites/credits/credits0001.png", // nicky case
 	credits0002: "sprites/credits/credits0002.png", // playtesters
 	credits0003: "sprites/credits/credits0003.png", // patreon
@@ -20,12 +21,27 @@ function Scene_Credits(){
 	var cont = new PIXI.Container();
 	Game.stage.addChild(cont);
 	var c = {};
-	for(var i=1; i<=8; i++){
+	for(var i=0; i<=8; i++){
         c[i] = new PIXI.Container();
         c[i].addChild(MakeSprite("credits000"+i));
         c[i].alpha = 0;
 		cont.addChild(c[i]);
 	}
+
+	// add text
+	var translatedBy = new PIXI.Text(textStrings["translatedBy"] + "\n", {font: "46px Cairo", fill:"#FFFFFF", align: "left"});
+	translatedBy.anchor.x = 0.0;
+	translatedBy.anchor.y = 0.5;
+	translatedBy.x = Game.width / 2 - 240;
+	translatedBy.y = Game.height / 2 - 41;
+	c[0].addChild(translatedBy);
+
+	var translatorText = new PIXI.Text(textStrings["RamiLiko28s"], {font: "86px Cairo", fill:"#FFFFFF", align: "left"});
+	translatorText.anchor.x = 0.0;
+	translatorText.anchor.y = 0.5;
+	translatorText.x = Game.width / 2 - 240;
+	translatorText.y = Game.height / 2 + 29;
+	c[0].addChild(translatorText);
     
     // add text
     var createdByText = new PIXI.Text(textStrings["createdBy"] + "\n", {font: "46px Cairo", fill:"#FFFFFF", align: "left"});
@@ -93,85 +109,92 @@ function Scene_Credits(){
     c[7].addChild(finallyText);
     
 	// TWEEN ANIM
-	Tween_get(c[1]).wait(_s(BEAT*4)) // 0. Wait 4 beats before credits...
-	.to({alpha:1}, _s(BEAT), Ease.quadInOut) // 1. CREATED BY!
-	.wait(_s(BEAT*3))
-	.to({alpha:0}, _s(BEAT), Ease.quadInOut)
-	.call(function(){
-
-		// 2. PLAYTESTERS
-		Tween_get(c[2])
-		.to({alpha:1}, _s(BEAT), Ease.quadInOut)
+	Tween_get(c[0]).wait(_s(BEAT*4)) // 0. Wait 4 beats before credits...
+		.to({alpha:1}, _s(BEAT), Ease.quadInOut) // 1. CREATED BY!
 		.wait(_s(BEAT*3))
 		.to({alpha:0}, _s(BEAT), Ease.quadInOut)
-		.call(function(){
-
-			// 3. PATREONS: CUT BETWEEN THEM THEN FADE OUT
-			Tween_get(c[3])
-			.to({alpha:1}, _s(BEAT), Ease.quadInOut)
-			.wait(_s(BEAT*2))
-			.call(function(){
-
-				// CUT!
-				c[3].alpha = 0;
-				c[4].alpha = 1;
-
-				Tween_get(c[4])
+		.call(function() {
+			// Creator
+			Tween_get(c[1]).wait(_s(BEAT * 2)) // 0. Wait 4 beats before credits...
+				.to({alpha: 1}, _s(BEAT), Ease.quadInOut) // 1. CREATED BY!
 				.wait(_s(BEAT*2))
-				.call(function(){
+				.to({alpha: 0}, _s(BEAT), Ease.quadInOut)
+				.call(function () {
 
-					// CUT!
-					c[4].alpha = 0;
-					c[5].alpha = 1;
+					// 2. PLAYTESTERS
+					Tween_get(c[2])
+						.to({alpha: 1}, _s(BEAT), Ease.quadInOut)
+						.wait(_s(BEAT))
+						.to({alpha: 0}, _s(BEAT), Ease.quadInOut)
+						.call(function () {
 
-					Tween_get(c[5])
-					.wait(_s(BEAT*2))
-					.call(function(){
+							// 3. PATREONS: CUT BETWEEN THEM THEN FADE OUT
+							Tween_get(c[3])
+								.to({alpha: 1}, _s(BEAT), Ease.quadInOut)
+								.wait(_s(BEAT))
+								.call(function () {
 
-						// CUT!
-						c[5].alpha = 0;
-						c[6].alpha = 1;
+									// CUT!
+									c[3].alpha = 0;
+									c[4].alpha = 1;
 
-						Tween_get(c[6])
-						.wait(_s(BEAT*2))
-						.to({alpha:0}, _s(BEAT), Ease.quadInOut) // fade...
-						.call(function(){
+									Tween_get(c[4])
+										.wait(_s(BEAT))
+										.call(function () {
 
-							// 4. And finally... thank YOU!
-							Tween_get(c[7])
-							.to({alpha:1}, _s(BEAT), Ease.quadInOut)
-							.wait(_s(BEAT))
-							.call(function(){
-								Tween_get(c[8])
-								.to({alpha:1}, _s(BEAT), Ease.quadInOut)
-								.wait(_s(BEAT*3))
-								.call(function(){
-									
-									// 5. Fade everything out, and NIGHTTIME SOUNDS
-									Tween_get(cont)
-									.wait(_s(BEAT))
-									.to({alpha:0}, _s(BEAT), Ease.quadInOut)
-									.call(function(){
-										Game.sceneManager.gotoScene("Post_Credits");
-									});
+											// CUT!
+											c[4].alpha = 0;
+											c[5].alpha = 1;
 
-									// Background Ambience
-									var ambience = Game.sounds.bg_nighttime;
-								   	ambience.loop(true);
-								   	ambience.volume(0);
-								   	ambience.play();
-								   	ambience.fade(0, 1, 2000);
+											Tween_get(c[5])
+												.wait(_s(BEAT))
+												.call(function () {
 
-								});	
-							});
+													// CUT!
+													c[5].alpha = 0;
+													c[6].alpha = 1;
+
+													Tween_get(c[6])
+														.wait(_s(BEAT))
+														.to({alpha: 0}, _s(BEAT), Ease.quadInOut) // fade...
+														.call(function () {
+
+															// 4. And finally... thank YOU!
+															Tween_get(c[7])
+																.to({alpha: 1}, _s(BEAT), Ease.quadInOut)
+																.wait(_s(BEAT))
+																.call(function () {
+																	Tween_get(c[8])
+																		.to({alpha: 1}, _s(BEAT), Ease.quadInOut)
+																		.wait(_s(BEAT * 3))
+																		.call(function () {
+
+																			// 5. Fade everything out, and NIGHTTIME SOUNDS
+																			Tween_get(cont)
+																				.wait(_s(BEAT))
+																				.to({alpha: 0}, _s(BEAT), Ease.quadInOut)
+																				.call(function () {
+																					Game.sceneManager.gotoScene("Post_Credits");
+																				});
+
+																			// Background Ambience
+																			var ambience = Game.sounds.bg_nighttime;
+																			ambience.loop(true);
+																			ambience.volume(0);
+																			ambience.play();
+																			ambience.fade(0, 1, 2000);
+
+																		});
+																});
+
+														});
+												});
+										});
+								});
 
 						});
-					});
-				});
-			});
 
+				})
 		});
-
-	});
 
 }
