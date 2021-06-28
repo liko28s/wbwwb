@@ -39,7 +39,7 @@ var textStrings_ES = {
 	// Act 3
 	"ellipsis": ". . .",
 	"coolNoMore": "los sombreros pasaron de moda, ¿no sabías?",
-	"beScared": "MIEDO, IRA",
+	"beScared": "Terror en las calles",
 
 	// MANIFESTO
 	"manifesto": [
