@@ -5,6 +5,12 @@
 		<link rel="icon"
 			  type="image/png"
 			  href="sprites/favicons/favicon.png">
+		<script type="module">
+			<!-- PWA -->
+			import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+			const el = document.createElement('pwa-update');
+			document.body.appendChild(el);
+		</script>
 	</head>
 	<body>
 		<div id="stage"></div>
@@ -95,7 +101,6 @@ Game.stats = false;
 window.onload = function(){
 	try{
 		Game.init();
-		//Game.init("Game");
 	}catch(e){
 		document.getElementById("warning").style.display = "block";
 	}
