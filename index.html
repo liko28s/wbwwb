@@ -5,8 +5,40 @@
 		<link rel="icon"
 			  type="image/png"
 			  href="sprites/favicons/favicon.png">
+		<script>
+
+
+			// Install button
+			window.addEventListener('DOMContentLoaded', (e) => {
+				// Initialize deferredPrompt for use later to show browser install prompt.
+				let deferredPrompt;
+
+				window.addEventListener('beforeinstallprompt', (e) => {
+					// Prevent the mini-infobar from appearing on mobile
+					e.preventDefault();
+					// Stash the event so it can be triggered later.
+					deferredPrompt = e;
+				});
+
+				let buttonInstall = document.getElementById("install-button")
+				buttonInstall.addEventListener('click', async () => {
+					// Show the install prompt
+					deferredPrompt.prompt();
+					// Wait for the user to respond to the prompt
+					const { outcome } = await deferredPrompt.userChoice;
+					// We've used the prompt, and can't use it again, throw it away
+					deferredPrompt = null;
+				});
+			});
+
+
+		</script>
 	</head>
 	<body>
+	<div id="install-advisor">
+		<p>Si quieres jugar en pantalla completa</p>
+		<button id="install-button">Haz Click Aquí</button>
+	</div>
 		<div id="stage"></div>
 		<div id="modal_shade"></div>
 		<div class="overlay" id="warning">

@@ -58,3 +58,18 @@ body{
 #paused{
 	cursor: pointer;
 }
+
+#install-advisor {
+	background-color: darkgray;
+	text-align: center;
+	max-width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 5px 5px 5px 5px;
+}
+
+@media all and (display-mode: fullscreen) {
+	#install-advisor {
+		display: none;
+	}
+}
