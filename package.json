@@ -10,9 +10,18 @@
     "start": "http-server -S",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Nick Case",
   "license": "CC0-1.0",
   "dependencies": {
     "http-server": "^0.12.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liko28s/wbwwb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liko28s/wbwwb/issues"
+  },
+  "homepage": "https://github.com/liko28s/wbwwb#readme"
 }
